@@ -1,0 +1,10 @@
+{
+  "name": "claude-training",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Small to-do app used for Claude Code training sessions",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "test": "node --test tests/"
+  }
+}

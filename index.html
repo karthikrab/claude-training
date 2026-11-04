@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Training To-Do</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Training To-Do</h1>
+      <p id="summary" class="summary"></p>
+    </header>
+
+    <form id="new-task-form" class="new-task">
+      <input id="new-task-input" type="text" placeholder="Add a new task…" autocomplete="off" required>
+      <button type="submit">Add</button>
+    </form>
+
+    <nav class="filters" aria-label="Filter tasks">
+      <button type="button" data-filter="all" class="active">All</button>
+      <button type="button" data-filter="active">Active</button>
+      <button type="button" data-filter="done">Done</button>
+    </nav>
+
+    <ul id="task-list" class="task-list"></ul>
+
+    <footer>
+      <button type="button" id="clear-done">Clear completed</button>
+      <button type="button" id="reset">Reset sample tasks</button>
+    </footer>
+  </main>
+
+  <script src="todos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
