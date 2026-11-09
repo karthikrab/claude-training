@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)"
+    ],
+    "ask": [
+      "Bash(git push *)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)"
+    ]
+  },
+  "extraKnownMarketplaces": {
+    "acme-tools": {
+      "source": {
+        "source": "github",
+        "repo": "acme-corp/claude-plugins"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "code-formatter@acme-tools": true
+  },
+  "sandbox": {
+    "enabled": true,
+    "filesystem": {
+      "allowWrite": [
+        "/tmp/build"
+      ]
+    },
+    "network": {
+      "allowedDomains": [
+        "registry.npmjs.org",
+        "*.*.com"
+      ]
+    }
+  },
+  "plansDirectory": "./plans"
+}
