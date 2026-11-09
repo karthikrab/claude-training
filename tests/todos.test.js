@@ -106,3 +106,26 @@ test("countRemaining is zero when everything is done", () => {
   const tasks = [makeTask("A", true), makeTask("B", true)];
   assert.strictEqual(countRemaining(tasks), 0);
 });
+
+test("the task list behaves correctly across a full add/toggle/filter/remove/clear sequence", () => {
+  let tasks = sampleTasks();
+  assert.strictEqual(tasks.length, 5);
+
+  tasks = addTask(tasks, "Write a unit test for the task list");
+  assert.strictEqual(tasks.length, 6);
+  const newTask = tasks[tasks.length - 1];
+  assert.strictEqual(newTask.done, false);
+
+  tasks = toggleTask(tasks, newTask.id);
+  assert.strictEqual(tasks.find((t) => t.id === newTask.id).done, true);
+  assert.strictEqual(countRemaining(tasks), filterTasks(tasks, "active").length);
+
+  const doneBefore = filterTasks(tasks, "done").length;
+  tasks = removeTask(tasks, newTask.id);
+  assert.strictEqual(tasks.length, 5);
+  assert.strictEqual(filterTasks(tasks, "done").length, doneBefore - 1);
+
+  tasks = clearDone(tasks);
+  assert.strictEqual(tasks.length, countRemaining(tasks));
+  assert.ok(tasks.every((t) => !t.done));
+});
