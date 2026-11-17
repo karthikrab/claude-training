@@ -1,0 +1,1 @@
+{ "name": "pr-review-check", "version": "0.1.0", "description": "Runs this repo's PR checks with /pr-check and blocks gh pr create until they pass" }
