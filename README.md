@@ -27,6 +27,16 @@ cp .env.example .env
 - `tests/` – Node tests for `todos.js`
 - `docs/adr/` – architecture decision records
 
+## PR review plugin
+
+`plugins/pr-review-check` is a Claude Code plugin. It runs this repo's PR rules (tests pass, no `import`/`export` in `todos.js`, all `todos.js` functions exported, no npm dependencies, `.env` not committed) and blocks `gh pr create` until they pass. Install it with:
+
+```
+/plugin install pr-review-check --marketplace karthikrab/claude-training
+```
+
+See [plugins/pr-review-check/README.md](plugins/pr-review-check/README.md) for the full rules.
+
 ## Falling behind?
 
 `training/templates/` holds finished copies of the four lab files. Copy any of them to the same path at the repo root:

@@ -1,0 +1,11 @@
+{
+  "name": "claude-training",
+  "owner": { "name": "claude-training team" },
+  "plugins": [
+    {
+      "name": "pr-review-check",
+      "source": "./plugins/pr-review-check",
+      "description": "Runs this repo's PR checks with /pr-check and blocks gh pr create until they pass"
+    }
+  ]
+}
