@@ -2,10 +2,10 @@
   "version": 1,
   "skills": {
     "create-adr": {
-      "source": "KyleMit/Splotch",
+      "source": "SameerG",
       "sourceType": "github",
-      "skillPath": ".agents/skills/create-adr/SKILL.md",
-      "computedHash": "43617f2978af6cfa25d6b4cbe5732b31e3bdf06cf7449285d2f7121c31bde7f6"
+      "skillPath": "/.claude/skills/create-adr/SKILL.md",
+      "computedHash": "1DF096F84DC29603C5D3E98C7FDAD6141110C389FDF440C37349F15A65FF3DA3"
     }
   }
 }
