@@ -42,7 +42,7 @@ Install directly from the marketplace using Claude Code:
     }
   ],
   "plugins": {
-    "github-pr-review": {
+    "pr-check": {
       "enabled": true
     }
   }
@@ -55,10 +55,10 @@ Copy the skill directly to your skills directory:
 
 ```bash
 # Personal (all projects)
-cp -r plugins-day8/skills/pr-check ~/.claude/skills/
+cp -r plugins-day8/pr-check/skills/pr-check ~/.claude/skills/
 
 # Project-specific
-cp -r plugins-day8/skills/pr-check .claude/skills/
+cp -r plugins-day8/pr-check/skills/pr-check .claude/skills/
 ```
 
 ## Usage
@@ -165,7 +165,7 @@ CHANGELOG.md                # Version history and changes
 
 This skill follows [Semantic Versioning](https://semver.org/):
 
-- **Current version:** 1.0.0
+- **Current version:** 1.1.1
 - **Version location:** `.claude-plugin/marketplace.json`
 - **Change history:** See [CHANGELOG.md](CHANGELOG.md)
 
@@ -204,7 +204,7 @@ To test changes locally:
 
 ```bash
 # Symlink for testing
-ln -s $(pwd)/plugins-day8/skills/pr-check ~/.claude/skills/pr-check
+ln -s $(pwd)/plugins-day8/pr-check/skills/pr-check ~/.claude/skills/pr-check
 
 # Or use the plugin marketplace locally
 /plugin marketplace add file://$(pwd)
