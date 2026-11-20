@@ -1,6 +1,6 @@
 # ADR-004: Narrow Claude Code permissions and swap to the in-repo `internal` marketplace
 
-- **Status:** Accepted
+- **Status:** Superseded by ADR-005
 - **Date:** 2026-11-20
 
 ## Context
