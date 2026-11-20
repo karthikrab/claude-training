@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run *)"
+      "Bash(npm start *)",
+      "Bash(npm test *)"
     ],
     "ask": [
       "Bash(git push *)"
@@ -13,27 +14,29 @@
     ]
   },
   "extraKnownMarketplaces": {
-    "acme-tools": {
-      "source": {
-        "source": "github",
-        "repo": "acme-corp/claude-plugins"
+    "internal": {
+        "source": {
+          "source": "github",
+          "repo": "sameergijare/claude-training",
+          "ref": "feature/responsetrain15",
+          "path": "plugins-day8/.claude-plugin/marketplace.json"
       }
     }
   },
   "enabledPlugins": {
-    "code-formatter@acme-tools": true
+    "pr-check@internal": true
   },
   "sandbox": {
     "enabled": true,
     "filesystem": {
       "allowWrite": [
-        "/tmp/build"
+        "./build"
       ]
     },
     "network": {
       "allowedDomains": [
         "registry.npmjs.org",
-        "*.*.com"
+        "*.com"
       ]
     }
   },

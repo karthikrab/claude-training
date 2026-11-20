@@ -1,6 +1,7 @@
 # ADR-002: Restrict Claude Code's permissions for the training session
 
-- **Status:** Accepted
+- **Status:** Superseded by ADR-004 (the npm allow rule, sandbox paths/domains and marketplace; the
+  `.env`/secrets deny and `git push` ask rules carry forward unchanged)
 - **Date:** 2026-11-09
 
 ## Context
