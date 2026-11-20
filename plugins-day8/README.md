@@ -19,7 +19,7 @@ Install directly from the marketplace using Claude Code:
 
 ```bash
 # Add this marketplace
-/plugin marketplace add internal/pr-check
+/plugin marketplace add https://github.com/sameergijare/claude-training/tree/feature/responsetrain15/plugins-day8
 
 # Install the plugin
 /plugin install pr-check
@@ -34,10 +34,10 @@ Install directly from the marketplace using Claude Code:
 {
   "extraKnownMarketplaces": [
     {
-      "name": "pr-check",
+      "name": "internal",
       "source": {
         "source": "github",
-        "repo": ""
+        "repo": "https://github.com/sameergijare/claude-training/tree/feature/responsetrain15/plugins-day8"
       }
     }
   ],
