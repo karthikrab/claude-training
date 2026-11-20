@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm start)",
+      "Bash(npm test)"
+    ],
+    "ask": [
+      "Bash(git push *)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)"
+    ]
+  },
+  "extraKnownMarketplaces": {
+    "internal": {
+      "source": {
+        "source": "github",
+        "repo": "karthikrab/claude-training",
+        "ref": "main",
+        "path": "plugins-day8/.claude-plugin/marketplace.json"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "pr-check@internal": true
+  },
+  "sandbox": {
+    "enabled": true,
+    "network": {
+      "allowedDomains": [
+        "registry.npmjs.org",
+        "github.com",
+        "api.github.com"
+      ]
+    }
+  },
+  "plansDirectory": "./plans"
+}

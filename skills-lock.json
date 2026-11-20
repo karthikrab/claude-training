@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "create-adr": {
+      "source": "https://github.com/sameergijare/claude-training.git",
+      "sourceType": "github",
+      "skillPath": "/.claude/skills/create-adr/SKILL.md",
+      "computedHash": "1DF096F84DC29603C5D3E98C7FDAD6141110C389FDF440C37349F15A65FF3DA3"
+    }
+  }
+}
