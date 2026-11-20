@@ -1,0 +1,23 @@
+{
+  "name": "internal",
+  "owner": {
+    "name": "Sameer Gijare",
+    "email": "[email protected]"
+  },
+  "metadata": {
+    "description": "Professional GitHub PR review skills for Claude Code",
+    "version": "1.1.1"
+  },
+  "plugins": [
+    {
+      "name": "pr-check",
+      "source": "./pr-check",
+      "description": "Professional GitHub PR reviews with pending reviews, code suggestions, and user approval workflow",
+      "version": "1.1.1",
+      "author": {
+        "name": "Sameer Gijare"
+      },
+      "keywords": ["github", "pr", "review", "code-suggestions", "gh-cli","check"]
+    }
+  ]
+}
