@@ -147,7 +147,7 @@ gh api repos/:owner/:repo/pulls/123/reviews/<REVIEW_ID>/events \
 
 ## License
 
-MIT (or specify your license)
+(specify your license)
 
 ## Repository Structure
 

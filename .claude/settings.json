@@ -1,8 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm start *)",
-      "Bash(npm test *)"
+      "Bash(npm start)",
+      "Bash(npm test)"
     ],
     "ask": [
       "Bash(git push *)"
