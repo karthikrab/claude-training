@@ -18,8 +18,8 @@ This skill teaches Claude to:
 Install directly from the marketplace using Claude Code:
 
 ```bash
-# Add this marketplace
-/plugin marketplace add https://github.com/sameergijare/claude-training/tree/feature/responsetrain15/plugins-day8
+# Add this marketplace (from a clone of the repo; the marketplace lives in plugins-day8/)
+/plugin marketplace add ./plugins-day8
 
 # Install the plugin
 /plugin install pr-check
@@ -32,22 +32,23 @@ Install directly from the marketplace using Claude Code:
 
 ```json
 {
-  "extraKnownMarketplaces": [
-    {
-      "name": "internal",
+  "extraKnownMarketplaces": {
+    "internal": {
       "source": {
         "source": "github",
-        "repo": "https://github.com/sameergijare/claude-training/tree/feature/responsetrain15/plugins-day8"
+        "repo": "karthikrab/claude-training",
+        "ref": "main",
+        "path": "plugins-day8/.claude-plugin/marketplace.json"
       }
     }
-  ],
-  "plugins": {
-    "pr-check": {
-      "enabled": true
-    }
+  },
+  "enabledPlugins": {
+    "pr-check@internal": true
   }
 }
 ```
+
+This matches the root `.claude/settings.json`. It only resolves once `plugins-day8/` exists on `main`.
 
 ### Option 2: Manual Copy
 
@@ -66,10 +67,10 @@ cp -r plugins-day8/pr-check/skills/pr-check .claude/skills/
 Once installed, Claude will automatically use this skill when you ask it to review pull requests.
 For example:
 
-\```
+````
 You: "Review PR #123 and suggest improvements"
 Claude: *Uses pr-check skill to create pending review with batched comments*
-\```
+````
 
 ## What Makes This Skill Different
 
@@ -151,22 +152,24 @@ gh api repos/:owner/:repo/pulls/123/reviews/<REVIEW_ID>/events \
 
 ## Repository Structure
 
-\```
-.claude-plugin/
-  marketplace.json          # Plugin marketplace definition
-plugins-day8/           # Plugin root
-  skills/                   # Skills directory
-    pr-check/       # The skill
-      SKILL.md              # Skill definition
-CHANGELOG.md                # Version history and changes
-\```
+```
+plugins-day8/               # Plugin root
+  .claude-plugin/
+    marketplace.json        # Plugin marketplace definition
+  pr-check/
+    skills/
+      pr-check/
+        SKILL.md            # Skill definition
+  CHANGELOG.md              # Version history and changes
+  README.md
+```
 
 ## Versioning
 
 This skill follows [Semantic Versioning](https://semver.org/):
 
 - **Current version:** 1.1.1
-- **Version location:** `.claude-plugin/marketplace.json`
+- **Version location:** `plugins-day8/.claude-plugin/marketplace.json`
 - **Change history:** See [CHANGELOG.md](CHANGELOG.md)
 
 ### Updating the Version
@@ -176,7 +179,7 @@ When making changes:
 1. **Update CHANGELOG.md** - Add entries under `[Unreleased]`
 2. **When releasing:**
    - Move unreleased items to new version section in CHANGELOG.md
-   - Update `version` in `.claude-plugin/marketplace.json`
+   - Update `version` in `plugins-day8/.claude-plugin/marketplace.json`
    - Create git tag: `git tag -a v1.0.1 -m "Release v1.0.1"`
    - Push with tags: `git push --tags`
 
@@ -207,6 +210,6 @@ To test changes locally:
 ln -s $(pwd)/plugins-day8/pr-check/skills/pr-check ~/.claude/skills/pr-check
 
 # Or use the plugin marketplace locally
-/plugin marketplace add file://$(pwd)
+/plugin marketplace add ./plugins-day8
 /plugin install pr-check
 ```

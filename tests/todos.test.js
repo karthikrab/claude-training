@@ -97,6 +97,11 @@ test("filterTasks returns active, done or all tasks", () => {
   assert.strictEqual(filterTasks(tasks, "all").length, 2);
 });
 
+test("filterTasks returns all tasks for an unknown filter value", () => {
+  const tasks = [makeTask("A", true), makeTask("B", false)];
+  assert.strictEqual(filterTasks(tasks, "bogus").length, 2);
+});
+
 test("countRemaining counts only the not-done tasks", () => {
   const tasks = [makeTask("A", true), makeTask("B", false), makeTask("C", false)];
   assert.strictEqual(countRemaining(tasks), 2);
