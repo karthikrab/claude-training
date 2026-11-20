@@ -15,11 +15,11 @@
   },
   "extraKnownMarketplaces": {
     "internal": {
-        "source": {
-          "source": "github",
-          "repo": "sameergijare/claude-training",
-          "ref": "feature/responsetrain15",
-          "path": "plugins-day8/.claude-plugin/marketplace.json"
+      "source": {
+        "source": "github",
+        "repo": "karthikrab/claude-training",
+        "ref": "main",
+        "path": "plugins-day8/.claude-plugin/marketplace.json"
       }
     }
   },
@@ -28,15 +28,11 @@
   },
   "sandbox": {
     "enabled": true,
-    "filesystem": {
-      "allowWrite": [
-        "./build"
-      ]
-    },
     "network": {
       "allowedDomains": [
         "registry.npmjs.org",
-        "*.com"
+        "github.com",
+        "api.github.com"
       ]
     }
   },
